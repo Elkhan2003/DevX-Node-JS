@@ -1,8 +1,0 @@
-Dear Hiring Manager,\n
-I am writing to express my interest in the ${jobTitle} position at ${companyName}. My name is ${applicantName} and I have ${experience} years of experience in the field.
-I believe that working at ${companyName} would be a great opportunity to further develop my skills and contribute to the development of innovative software solutions.
-I have always been impressed with ${companyName}'s commitment to pushing the boundaries of technology and creating products that have a positive impact on people's lives.
-In addition to my technical skills, I am a strong communicator and collaborator. I believe that effective communication and teamwork are essential for developing high-quality software products.
-I am also a quick learner and have a strong work ethic, which I believe will enable me to make a positive contribution to your team.
-Thank you for considering my application. I look forward to the opportunity to discuss my qualifications further.\n
-Sincerely, ${applicantName}!
