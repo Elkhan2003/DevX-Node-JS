@@ -1,29 +1,20 @@
+const express = require("express");
 const fs = require("fs");
 
-function generateResume(templateName, jobName) {
-	const templatePath = `./${templateName}`;
-	const resumePath = `./${jobName}-Resume.pdf`;
-	fs.copyFile(templatePath, resumePath, (err) => {
-		if (err) throw err;
-		console.log(`Generated resume for ${jobName}`);
-	});
-}
-
-function downloadResume(jobName, res) {
-	const resumePath = `./${jobName}-Resume.pdf`;
-	res.download(resumePath, (err) => {
-		if (err) throw err;
-		console.log(`Sent resume for ${jobName}`);
-	});
-}
-
-const express = require("express");
 const app = express();
 
-app.get("/resume", (req, res) => {
-	const jobName = req.query.job;
-	generateResume("Backend-Resume.pdf", jobName);
-	downloadResume(jobName, res);
+app.get("/resume-and-download", (req, res) => {
+	const { jobTitle } = req.query;
+	const resumeName = `${jobTitle}-Resume.pdf`;
+
+	fs.copyFile("./Frontend-Resume.pdf", `./${resumeName}`, (err) => {
+		if (err) throw err;
+		console.log(`Resume copied and renamed to ${resumeName}`);
+		res.download(`./${resumeName}`, (err) => {
+			if (err) throw err;
+			console.log(`Resume ${resumeName} downloaded`);
+		});
+	});
 });
 
 const port = 911;
